@@ -11,9 +11,9 @@ export default function Home() {
           </h1>
 
           <p className="lead">
-            I’m a <strong>freshman Computer Science student</strong> at the{" "}
-            <strong>University of Maryland</strong>. I like building clean, practical
-            projects and improving my skills through hands-on work.
+            I&apos;m a <strong>Computer Science and Data Science student</strong> at the{" "}
+            <strong>University of Maryland</strong> building clean, practical
+            software and sharpening my fundamentals through hands-on projects.
           </p>
 
           <div className="btnrow">
@@ -31,11 +31,11 @@ export default function Home() {
           <div className="tagrow" aria-label="Highlights">
             <div>Skill Stack: </div>
             <span className="tag">Java</span>
+            <span className="tag">Kotlin</span>
             <span className="tag">Python</span>
             <span className="tag">MATLAB</span>
-            <span className="tag">HTML</span>
-            <span className="tag">CSS</span>
             <span className="tag">React</span>
+            <span className="tag">AWS</span>
           </div>
         </div>
 
@@ -46,7 +46,8 @@ export default function Home() {
           <div className="mini">
             <div><strong>School:</strong> University of Maryland</div>
             <div><strong>Major:</strong> Computer Science + Data Science</div>
-            <div><strong>Grade:</strong> Freshman</div>
+            <div><strong>Expected Graduation:</strong> May 2028</div>
+            <div><strong>GPA:</strong> 3.7/4.0</div>
             <div><strong>Email:</strong> avadivel@umd.edu</div>
           </div>
         </aside>
@@ -61,37 +62,30 @@ export default function Home() {
        <div className="card">
   <div className="about-text">
     <p className="lead" style={{ maxWidth: "75ch" }}>
-      I am a freshman at the University of Maryland–College Park with a strong
-      interest in the intersection of computer science, neuroscience, and emerging
-      technologies. I plan to pursue a double major in Computer Science and
-      Neuroscience, driven by my curiosity about how computational methods and
-      artificial intelligence are transforming medicine and our understanding of
-      the human brain.
+      I am a student at the University of Maryland with a focus on computer
+      science, data science, and practical software development. I enjoy
+      building structured applications, improving front-end polish, and
+      strengthening the fundamentals that support reliable engineering work.
     </p>
 
     <p className="lead" style={{ maxWidth: "75ch" }}>
-      I am particularly interested in the development of technologies for
-      neurological and developmental disorders, and how software systems can be
-      designed to support diagnosis, treatment, and accessibility. My long-term
-      academic interests include computational neuroscience and the application
-      of machine learning to biological and cognitive data.
+      My academic work has included coursework in object oriented programming,
+      data structures and algorithms, discrete structures, and databases. I am
+      especially interested in opportunities where strong implementation,
+      analytical thinking, and clean collaboration matter.
     </p>
 
     <p className="lead" style={{ maxWidth: "75ch" }}>
-      I have experience programming in Java, Python, CSS, HTML, and React, and have completed
-      coursework and projects that emphasize problem-solving, algorithmic thinking,
-      and structured software development. I also have research experience,
-      including conducting literature reviews and working with academic software
-      tools to support data analysis and research workflows.
+      I have experience with Java, Kotlin, Python, MATLAB, C/C++, HTML, CSS,
+      JavaScript, SQL, React, Vite, Firebase, and Git. My work so far includes
+      academic projects, portfolio development, and internships that demanded
+      careful documentation, consistency, and attention to detail.
     </p>
 
     <p className="lead" style={{ maxWidth: "75ch" }}>
-      Beyond research, I am highly motivated to gain hands-on experience in the
-      software engineering industry. I am especially interested in roles that
-      value strong fundamentals, collaborative development, and thoughtful system
-      design. I am also passionate about computer science education and enjoy
-      helping others understand technical concepts through clear explanations and
-      structured learning.
+      I&apos;m looking for internships, research, and technical environments where
+      I can contribute, learn quickly, and keep building a strong engineering
+      foundation.
     </p>
   </div>
 
@@ -101,15 +95,15 @@ export default function Home() {
           <div className="grid3">
             <div className="item">
               <h3>What I’m learning</h3>
-              <p>Java, web basics, and project structure that’s easy to maintain.</p>
+              <p>Data structures, databases, software design, and production-minded front-end work.</p>
             </div>
             <div className="item">
               <h3>What I like building</h3>
-              <p>Useful tools, clean UI, and projects I can explain clearly.</p>
+              <p>Useful tools, polished interfaces, and projects with clear implementation choices.</p>
             </div>
             <div className="item">
               <h3>What I’m aiming for</h3>
-              <p>Internships, research, and collaborative student projects.</p>
+              <p>Internships, research opportunities, and collaborative software projects.</p>
             </div>
           </div>
         </div>

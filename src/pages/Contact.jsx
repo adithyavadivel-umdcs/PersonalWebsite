@@ -61,10 +61,10 @@ export default function Contact() {
             <a className="btn" href="https://www.linkedin.com/in/adithya-vadivel-45882b233/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a
               className="btn"
-              href="/Adithya_Vadivel_Resume.docx"
+              href="/Adithya_Vadivel_Resume.pdf"
               download
             >
-              Résumé
+              Resume PDF
             </a>
           </div>
         </aside>
