@@ -7,8 +7,8 @@
   --surface-soft:rgba(255,252,249,.92);
   --text:#111827;
   --muted:#374151;
-  --line:rgba(55, 65, 81, .18);
-  --line-strong:rgba(55, 65, 81, .28);
+  --line:rgba(31, 41, 55, .18);
+  --line-strong:rgba(31, 41, 55, .32);
   --accent:#a63737;
   --accent-soft:#eebcbc;
   --accent-ink:#7f1d1d;
@@ -75,7 +75,7 @@ h1, h2, h3, h4, .brand-name{
   margin-top: 44px;
   padding-top: 20px;
   border-top: 1px solid var(--line);
-  color: var(--muted);
+  color: #374151;
   font-size: 13px;
   display:flex;
   justify-content: space-between;

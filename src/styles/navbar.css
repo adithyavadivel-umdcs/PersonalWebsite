@@ -58,7 +58,7 @@
 .navlinks a.active{
   color: var(--accent-ink);
   border-color: rgba(166, 55, 55, .34);
-  background: rgba(238, 188, 188, .75);
+  background: rgba(238, 188, 188, .9);
 }
 
 @media (max-width: 640px){
