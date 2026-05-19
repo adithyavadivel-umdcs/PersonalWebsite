@@ -86,7 +86,7 @@ export default function Resume() {
           </div>
 
           <div className="resume-actions">
-            <a className="btn primary resume-btn" href="/Adithya_Vadivel_Resume.pdf" download>
+            <a className="btn primary resume-btn" href="/assets/Adithya_Vadivel_Resume.pdf" download>
               Download Resume
             </a>
             <a className="btn resume-btn" href="mailto:avadivel@umd.edu">
@@ -127,10 +127,6 @@ export default function Resume() {
           <div className="fact">
             <span className="fact-label">Timeline</span>
             <span>Sept 2025 - May 2028</span>
-          </div>
-          <div className="fact">
-            <span className="fact-label">GPA</span>
-            <span>3.7/4.0</span>
           </div>
         </div>
 

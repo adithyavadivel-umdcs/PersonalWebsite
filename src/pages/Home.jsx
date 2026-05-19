@@ -1,5 +1,6 @@
 import "../styles/page.css";
 import { Link } from "react-router-dom";
+import profilePhoto from "../assets/profile-pic/DSC03637.JPG";
 
 export default function Home() {
   return (
@@ -40,14 +41,17 @@ export default function Home() {
         </div>
 
         <aside className="card profile">
-          <div className="avatar" aria-label="Profile initials">
-            AV
+          <div className="avatar-shell">
+            <img
+              className="avatar-photo"
+              src={profilePhoto}
+              alt="Adithya Vadivel"
+            />
           </div>
           <div className="mini">
             <div><strong>School:</strong> University of Maryland</div>
             <div><strong>Major:</strong> Computer Science + Data Science</div>
             <div><strong>Expected Graduation:</strong> May 2028</div>
-            <div><strong>GPA:</strong> 3.7/4.0</div>
             <div><strong>Email:</strong> avadivel@umd.edu</div>
           </div>
         </aside>

@@ -24,7 +24,7 @@ export default function Contact() {
       <div className="contact-grid">
         <div className="card">
           <p className="lead">
-            Want to connect? Send a message. (This opens your email app—no backend.)
+            Want to connect? Send a message.
           </p>
 
           <div className="divider" />
@@ -61,7 +61,7 @@ export default function Contact() {
             <a className="btn" href="https://www.linkedin.com/in/adithya-vadivel-45882b233/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a
               className="btn"
-              href="/Adithya_Vadivel_Resume.pdf"
+              href="/assets/Adithya_Vadivel_Resume.pdf"
               download
             >
               Resume PDF
