@@ -22,6 +22,34 @@ const skillGroups = [
 
 const experiences = [
   {
+    company: "U.S. Centers for Medicare & Medicaid Services (CMS)",
+    role: "Data Analyst Intern",
+    employmentType: "Full-Time",
+    location: "Woodlawn, MD",
+    dates: "Jun 2026 - Aug 2026",
+    bullets: [
+      "Built Excel-based trackers, templates, and formula-driven analyses (PivotTables, lookups) used by staff to organize and monitor case data, reducing manual tracking effort.",
+      "Analyzed claims and case-routing data using internal CMS systems, producing spreadsheets and summary dashboards that surfaced patterns for team decision-making.",
+      "Advised on a SharePoint migration by restructuring folder hierarchies and metadata, recommending permission and access configurations, and documenting migration steps for team reference.",
+      "Participated in requirements-gathering sessions with analysts and supervisors, documenting operational needs and translating them into structured specifications for internal tool improvements.",
+      "Used AI-assisted tools to accelerate documentation and reporting workflows, improving turnaround time on internal deliverables.",
+      "Collaborated with cross-functional teams, including analysts, supervisors, and program experts, to clarify system workflows and communicate findings to both technical and non-technical stakeholders.",
+    ],
+  },
+  {
+    company: "RAINN",
+    role: "DevOps Engineer Intern",
+    employmentType: "Part-Time",
+    location: "Washington, DC",
+    dates: "Jun 2026 - Aug 2026",
+    bullets: [
+      "Designed and implemented a standardized AWS resource tagging strategy, applying tags across existing cloud infrastructure and automating tag enforcement to improve resource organization and cost visibility.",
+      "Researched AWS IAM best practices and drafted/reviewed IAM policy documents, identifying overly permissive access and recommending least-privilege configurations to strengthen cloud security.",
+      "Investigated AWS SATv2 security assessment findings, documenting root causes and remediation steps to support ongoing infrastructure hardening efforts.",
+      "Collaborated with the DevOps Engineer on cloud infrastructure support, contributing to system monitoring, troubleshooting, and technical documentation as part of routine operational maintenance.",
+    ],
+  },
+  {
     company: "Northeastern University - Center for Drug Discovery",
     role: "Research Intern",
     location: "Boston, MA",
@@ -47,6 +75,13 @@ const experiences = [
 
 const projects = [
   {
+    name: "AWS SATv2 Findings Assistant",
+    year: "2026",
+    stack: ["Python", "Pandas", "Pytest", "HTML", "Git"],
+    description:
+      "Developed a privacy-first Python application that processes AWS SATv2/Prowler assessment exports, automatically redacting sensitive cloud infrastructure data and generating AI-ready remediation summaries without exposing confidential cloud resources. Built an automated findings analysis pipeline that streams large CSV files, normalizes multiple SATv2/Prowler export formats, and classifies and prioritizes security findings into HTML and Markdown reports to accelerate remediation workflows. Implemented automated privacy validation and comprehensive unit tests to ensure sensitive infrastructure data is never included in AI-ready outputs, while maintaining reliable parsing, classification, and reporting across assessment formats.",
+  },
+  {
     name: "Personal Portfolio",
     year: "2026",
     stack: ["React", "Vite", "AWS", "CloudFront"],
@@ -59,13 +94,6 @@ const projects = [
     stack: ["Java", "OOP", "Data Structures"],
     description:
       "Developed a media rental system that models customers, inventory, and rental rules using object-oriented design, collections, and maintainable application logic.",
-  },
-  {
-    name: "Passport Project",
-    year: "2025",
-    stack: ["JavaScript", "HTML", "CSS"],
-    description:
-      "Created an interactive web project focused on structured front-end development, clean presentation, and reliable user-facing behavior.",
   },
 ];
 
@@ -185,6 +213,7 @@ export default function Resume() {
                   <div className="timeline-meta">
                     <span>{experience.location}</span>
                     <span>{experience.dates}</span>
+                    {experience.employmentType && <span>{experience.employmentType}</span>}
                   </div>
                 </div>
                 <ul className="resume-list">

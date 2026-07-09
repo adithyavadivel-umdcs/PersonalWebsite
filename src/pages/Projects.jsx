@@ -3,6 +3,13 @@ import "../styles/page.css";
 export default function Projects() {
   const projects = [
     {
+      title: "AWS SATv2 Findings Assistant",
+      year: "2026",
+      description:
+        "Developed a privacy-first Python application that processes AWS SATv2/Prowler assessment exports, automatically redacting sensitive cloud infrastructure data and generating AI-ready remediation summaries without exposing confidential cloud resources. Built an automated findings analysis pipeline that streams large CSV files, normalizes multiple SATv2/Prowler export formats, and classifies and prioritizes security findings into HTML and Markdown reports to accelerate remediation workflows. Implemented automated privacy validation and comprehensive unit tests to ensure sensitive infrastructure data is never included in AI-ready outputs, while maintaining reliable parsing, classification, and reporting across assessment formats.",
+      tags: ["Python", "Pandas", "Pytest", "HTML", "Git"],
+    },
+    {
       title: "Personal Portfolio",
       year: "2026",
       description:
@@ -15,13 +22,6 @@ export default function Projects() {
       description:
         "Designed and implemented a media rental management system that models customers, media items, and rental plans using object-oriented design. Focused on clean class structure, collections, and reliable business logic.",
       tags: ["Java", "OOP", "Collections", "Algorithms"],
-    },
-    {
-      title: "Passport Project",
-      year: "2025",
-      description:
-        "Created an interactive web application with attention to layout, user-facing clarity, and maintainable front-end structure. Emphasized readable code, polished presentation, and consistent behavior across screens.",
-      tags: ["JavaScript", "HTML", "CSS", "Frontend"],
     },
   ];
 
