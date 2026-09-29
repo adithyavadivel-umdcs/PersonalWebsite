@@ -16,13 +16,6 @@ export default function Projects() {
         "Built a single-page portfolio with React and Vite to present my background, projects, and resume in a clean, responsive interface. Structured the site for straightforward updates and deployed it with AWS S3, CloudFront, Route 53, and HTTPS.",
       tags: ["React", "Vite", "AWS", "Responsive UI"],
     },
-    {
-      title: "Media Rental Manager",
-      year: "2025",
-      description:
-        "Designed and implemented a media rental management system that models customers, media items, and rental plans using object-oriented design. Focused on clean class structure, collections, and reliable business logic.",
-      tags: ["Java", "OOP", "Collections", "Algorithms"],
-    },
   ];
 
   return (

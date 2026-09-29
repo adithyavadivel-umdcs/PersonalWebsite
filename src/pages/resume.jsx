@@ -3,11 +3,11 @@ import "../styles/page.css";
 const skillGroups = [
   {
     label: "Languages",
-    items: ["Java", "Kotlin", "Python", "MATLAB", "C/C++", "HTML", "CSS", "JavaScript", "SQL"],
+    items: ["Java", "Kotlin", "Python", "TypeScript", "JavaScript", "C/C++", "SQL", "MATLAB", "HTML/CSS"],
   },
   {
     label: "Frameworks & Tools",
-    items: ["React.js", "Vite", "Firebase", "Git"],
+    items: ["React.js", "Vite", "Firebase", "Pandas", "Pytest", "Git"],
   },
   {
     label: "Coursework",
@@ -23,17 +23,29 @@ const skillGroups = [
 const experiences = [
   {
     company: "U.S. Centers for Medicare & Medicaid Services (CMS)",
+    role: "Software Developer Intern",
+    employmentType: "Part-Time",
+    location: "Woodlawn, MD",
+    dates: "Sep 2026 - Present",
+    bullets: [
+      "Develop and maintain large-scale Medicare pricing applications (“Pricers”), implementing updates to core logic, configuration pipelines, and data models using Java, Maven, and Git.",
+      "Convert internal SAS programs to Python under an HHS CIO directive to modernize legacy analytics code.",
+      "Automate and monitor release workflows for annual, quarterly, and off-cycle Pricer updates using GitHub, Jira, Confluence, and Slack, ensuring seamless deployment across DEV, IMPL, and PROD environments.",
+      "Conduct code reviews and partner with technical leads to enforce coding standards, security (CVE suppression), and SonarQube quality gates prior to production release.",
+      "Build and validate automated pipelines that transform policy input files (CSV, YAML, Excel) into fee schedules and pricing files for Medicare claim reimbursement.",
+    ],
+  },
+  {
+    company: "U.S. Centers for Medicare & Medicaid Services (CMS)",
     role: "Data Analyst Intern",
     employmentType: "Full-Time",
     location: "Woodlawn, MD",
     dates: "Jun 2026 - Aug 2026",
     bullets: [
-      "Built Excel-based trackers, templates, and formula-driven analyses (PivotTables, lookups) used by staff to organize and monitor case data, reducing manual tracking effort.",
-      "Analyzed claims and case-routing data using internal CMS systems, producing spreadsheets and summary dashboards that surfaced patterns for team decision-making.",
-      "Advised on a SharePoint migration by restructuring folder hierarchies and metadata, recommending permission and access configurations, and documenting migration steps for team reference.",
-      "Participated in requirements-gathering sessions with analysts and supervisors, documenting operational needs and translating them into structured specifications for internal tool improvements.",
-      "Used AI-assisted tools to accelerate documentation and reporting workflows, improving turnaround time on internal deliverables.",
-      "Collaborated with cross-functional teams, including analysts, supervisors, and program experts, to clarify system workflows and communicate findings to both technical and non-technical stakeholders.",
+      "Built an animated, graphics-driven presentation application in TypeScript, implementing reusable slide components and programmatic chart animations to communicate case-routing workflows to staff and leadership.",
+      "Automated recurring case-data reporting through formula-driven pipelines and pivot-based aggregations, eliminating manual tracking steps and reducing turnaround time on recurring deliverables.",
+      "Queried and analyzed claims and case-routing data from internal CMS systems, transforming raw extracts into summary dashboards that surfaced patterns used for team decision-making.",
+      "Translated stakeholder requirements into structured technical specifications for internal tooling, and documented a SharePoint migration covering folder hierarchy, metadata schema, and access configuration.",
     ],
   },
   {
@@ -43,10 +55,10 @@ const experiences = [
     location: "Washington, DC",
     dates: "Jun 2026 - Aug 2026",
     bullets: [
-      "Designed and implemented a standardized AWS resource tagging strategy, applying tags across existing cloud infrastructure and automating tag enforcement to improve resource organization and cost visibility.",
-      "Researched AWS IAM best practices and drafted/reviewed IAM policy documents, identifying overly permissive access and recommending least-privilege configurations to strengthen cloud security.",
-      "Investigated AWS SATv2 security assessment findings, documenting root causes and remediation steps to support ongoing infrastructure hardening efforts.",
-      "Collaborated with the DevOps Engineer on cloud infrastructure support, contributing to system monitoring, troubleshooting, and technical documentation as part of routine operational maintenance.",
+      "Root-caused an 8-month silent outage in a production CloudWatch → SNS → Lambda → Slack alerting pipeline by mining 30 days of logs to prove all 147 invocations returned 400 invalid_token, isolating error handling that never inspected the outbound HTTP status.",
+      "Restored and hardened the Python notifier by rotating the dead webhook and migrating a hardcoded secret into SSM Parameter Store, adding status-code validation so delivery failures surface as real CloudWatch errors.",
+      "Re-architected alarm routing, splitting URL/downtime alerts from infrastructure health alarms into dedicated Slack channels to cut noise and improve on-call signal.",
+      "Authored least-privilege IAM policies in JSON and automated a standardized AWS resource tagging strategy across existing infrastructure, hardening security and improving cost visibility.",
     ],
   },
   {
@@ -79,21 +91,14 @@ const projects = [
     year: "2026",
     stack: ["Python", "Pandas", "Pytest", "HTML", "Git"],
     description:
-      "Developed a privacy-first Python application that processes AWS SATv2/Prowler assessment exports, automatically redacting sensitive cloud infrastructure data and generating AI-ready remediation summaries without exposing confidential cloud resources. Built an automated findings analysis pipeline that streams large CSV files, normalizes multiple SATv2/Prowler export formats, and classifies and prioritizes security findings into HTML and Markdown reports to accelerate remediation workflows. Implemented automated privacy validation and comprehensive unit tests to ensure sensitive infrastructure data is never included in AI-ready outputs, while maintaining reliable parsing, classification, and reporting across assessment formats.",
+      "Developed a privacy-first Python CLI that parses AWS SATv2/Prowler exports, redacts sensitive infrastructure data, and generates AI-ready remediation summaries without exposing raw CSV records. Engineered a streaming pipeline processing large CSVs in constant memory, normalizing multiple export schemas and classifying findings by severity into HTML/Markdown reports, backed by a Pytest privacy-validation suite.",
   },
   {
     name: "Personal Portfolio",
     year: "2026",
-    stack: ["React", "Vite", "AWS", "CloudFront"],
+    stack: ["React", "Vite", "JavaScript", "AWS", "Git"],
     description:
-      "Built and iterated on a personal portfolio site to present projects, résumé content, and contact information with a clean, responsive UI and production deployment workflow.",
-  },
-  {
-    name: "Media Rental Manager",
-    year: "2025",
-    stack: ["Java", "OOP", "Data Structures"],
-    description:
-      "Developed a media rental system that models customers, inventory, and rental rules using object-oriented design, collections, and maintainable application logic.",
+      "Built and deployed a responsive single-page application with React and Vite using a component-based architecture. Implemented cloud hosting and CDN delivery on AWS S3 and CloudFront with Route 53 domain routing and HTTPS via Certificate Manager; optimized load times through asset bundling and cache-control tuning.",
   },
 ];
 
