@@ -3,10 +3,14 @@ import { prefersReducedMotion } from "../lib/effects";
 
 /** Types and deletes each phrase in turn. `words` must be a stable array. */
 export default function Typewriter({ words, typeMs = 65, deleteMs = 32, holdMs = 1700 }) {
-  const [text, setText] = useState(() => (prefersReducedMotion() ? words[0] : ""));
+  // Always start empty so the prerendered HTML and the first client render match.
+  const [text, setText] = useState("");
 
   useEffect(() => {
-    if (prefersReducedMotion()) return undefined;
+    if (prefersReducedMotion()) {
+      const t = setTimeout(() => setText(words[0]), 0);
+      return () => clearTimeout(t);
+    }
     let index = 0;
     let length = 0;
     let deleting = false;

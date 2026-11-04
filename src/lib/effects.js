@@ -89,6 +89,44 @@ export function useScrollProgress() {
   }, []);
 }
 
+function upsertHead(selector, create, attr, value) {
+  let el = document.head.querySelector(selector);
+  if (!el) {
+    el = create();
+    document.head.appendChild(el);
+  }
+  el.setAttribute(attr, value);
+}
+
+/** Keeps <title>, description, canonical and social tags in sync on client-side navigation. */
+export function useDocumentMeta(meta, canonicalUrl) {
+  const { title, description } = meta;
+  useEffect(() => {
+    document.title = title;
+    const metaTag = (key, name) => () => {
+      const m = document.createElement("meta");
+      m.setAttribute(key, name);
+      return m;
+    };
+    upsertHead('meta[name="description"]', metaTag("name", "description"), "content", description);
+    upsertHead('meta[property="og:title"]', metaTag("property", "og:title"), "content", title);
+    upsertHead('meta[property="og:description"]', metaTag("property", "og:description"), "content", description);
+    upsertHead('meta[property="og:url"]', metaTag("property", "og:url"), "content", canonicalUrl);
+    upsertHead('meta[name="twitter:title"]', metaTag("name", "twitter:title"), "content", title);
+    upsertHead('meta[name="twitter:description"]', metaTag("name", "twitter:description"), "content", description);
+    upsertHead(
+      'link[rel="canonical"]',
+      () => {
+        const l = document.createElement("link");
+        l.rel = "canonical";
+        return l;
+      },
+      "href",
+      canonicalUrl
+    );
+  }, [title, description, canonicalUrl]);
+}
+
 export function prefersReducedMotion() {
   return typeof window !== "undefined" &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;

@@ -3,8 +3,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Backdrop from "./components/Backdrop";
 import PageTransition from "./components/PageTransition";
-import { usePointerVars, useReveal, useScrollProgress } from "./lib/effects";
+import { useDocumentMeta, usePointerVars, useReveal, useScrollProgress } from "./lib/effects";
 import { links } from "./data/profile";
+import { canonicalFor, metaFor } from "./data/seo";
 
 import Home from "./pages/Home";
 import Resume from "./pages/resume";
@@ -26,6 +27,7 @@ function App() {
   usePointerVars();
   useScrollProgress();
   useReveal(location.pathname);
+  useDocumentMeta(metaFor(location.pathname), canonicalFor(location.pathname));
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });

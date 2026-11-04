@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { prefersReducedMotion } from "../lib/effects";
 
-/** Counts from 0 to `to` the first time it scrolls into view. */
+/**
+ * Counts from 0 to `to` the first time it scrolls into view.
+ * Renders the final value initially so prerendered HTML (and crawlers) see real numbers.
+ */
 export default function CountUp({ to, duration = 1400, suffix = "" }) {
   const ref = useRef(null);
-  const [value, setValue] = useState(() => (prefersReducedMotion() ? to : 0));
+  const [value, setValue] = useState(to);
 
   useEffect(() => {
     if (prefersReducedMotion()) return undefined;
