@@ -1,38 +1,35 @@
 import "../styles/page.css";
+import Tilt from "../components/Tilt";
+import { projects } from "../data/profile";
 
 export default function Projects() {
-  const projects = [
-    {
-      title: "AWS SATv2 Findings Assistant",
-      year: "2026",
-      description:
-        "Developed a privacy-first Python application that processes AWS SATv2/Prowler assessment exports, automatically redacting sensitive cloud infrastructure data and generating AI-ready remediation summaries without exposing confidential cloud resources. Built an automated findings analysis pipeline that streams large CSV files, normalizes multiple SATv2/Prowler export formats, and classifies and prioritizes security findings into HTML and Markdown reports to accelerate remediation workflows. Implemented automated privacy validation and comprehensive unit tests to ensure sensitive infrastructure data is never included in AI-ready outputs, while maintaining reliable parsing, classification, and reporting across assessment formats.",
-      tags: ["Python", "Pandas", "Pytest", "HTML", "Git"],
-    },
-    {
-      title: "Personal Portfolio",
-      year: "2026",
-      description:
-        "Built a single-page portfolio with React and Vite to present my background, projects, and resume in a clean, responsive interface. Structured the site for straightforward updates and deployed it with AWS S3, CloudFront, Route 53, and HTTPS.",
-      tags: ["React", "Vite", "AWS", "Responsive UI"],
-    },
-  ];
-
   return (
-    <section className="section">
-      <div className="section-title">
-        <h2>Projects</h2>
-        <p>Selected work aligned with the current resume</p>
+    <section className="section page-top">
+      <div className="page-head" data-reveal>
+        <span className="section-index">// work</span>
+        <h1>
+          Selected <span className="gradient">Projects</span>
+        </h1>
+        <p className="lead">Selected work aligned with the current resume.</p>
       </div>
 
-      <div className="grid3">
-        {projects.map((project) => (
-          <article className="item hoverlift project-card" key={project.title}>
-            <div className="resume-row">
-              <h3>{project.title}</h3>
+      <div className="project-grid">
+        {projects.map((project, i) => (
+          <Tilt
+            as="article"
+            max={4}
+            className="card spot project-card"
+            key={project.title}
+            data-reveal
+            style={{ "--d": i }}
+          >
+            <div className="project-top">
+              <span className="project-num">{String(i + 1).padStart(2, "0")}</span>
               <span className="project-year">{project.year}</span>
             </div>
-            <p>{project.description}</p>
+            <p className="project-kind">{project.kind}</p>
+            <h3>{project.title}</h3>
+            <p className="project-desc">{project.description}</p>
             <div className="meta">
               {project.tags.map((tag) => (
                 <span className="pill" key={tag}>
@@ -40,7 +37,7 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-          </article>
+          </Tilt>
         ))}
       </div>
     </section>
