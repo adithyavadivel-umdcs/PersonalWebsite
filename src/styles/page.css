@@ -7,7 +7,7 @@
   padding: 28px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(30, 21, 26, 0.66), rgba(15, 10, 13, 0.66));
+  background: linear-gradient(180deg, rgba(20, 28, 48, 0.66), rgba(9, 13, 24, 0.66));
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow:
@@ -29,7 +29,7 @@
 .spot::before {
   background: radial-gradient(
     420px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(239, 35, 60, 0.1),
+    rgba(59, 110, 255, 0.1),
     transparent 45%
   );
 }
@@ -38,8 +38,8 @@
   padding: 1px;
   background: radial-gradient(
     260px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 107, 122, 0.9),
-    rgba(239, 35, 60, 0.6) 35%,
+    rgba(96, 165, 250, 0.9),
+    rgba(59, 110, 255, 0.6) 35%,
     transparent 65%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -163,9 +163,9 @@
 }
 .btn:hover {
   transform: translateY(-2px);
-  border-color: rgba(255, 107, 122, 0.55);
-  background: rgba(255, 107, 122, 0.06);
-  box-shadow: 0 10px 30px -10px rgba(255, 107, 122, 0.45);
+  border-color: rgba(96, 165, 250, 0.55);
+  background: rgba(96, 165, 250, 0.06);
+  box-shadow: 0 10px 30px -10px rgba(96, 165, 250, 0.45);
 }
 .btn:hover svg:last-child {
   transform: translateX(3px);
@@ -177,9 +177,9 @@
 .btn.primary {
   border: none;
   color: #fff;
-  background: linear-gradient(110deg, #ff5a5f, #e11d48 50%, #9f1239);
+  background: linear-gradient(110deg, #4f8dff, #2f5bea 50%, #1e3aa8);
   background-size: 180% auto;
-  box-shadow: 0 10px 30px -12px rgba(239, 35, 60, 0.8);
+  box-shadow: 0 10px 30px -12px rgba(59, 110, 255, 0.8);
 }
 .btn.primary::before {
   content: "";
@@ -192,7 +192,7 @@
 }
 .btn.primary:hover {
   background-position: 100% center;
-  box-shadow: 0 16px 40px -12px rgba(239, 35, 60, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  box-shadow: 0 16px 40px -12px rgba(59, 110, 255, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
 }
 .btn.primary:hover::before {
   transform: translateX(120%);
@@ -219,8 +219,8 @@
 }
 .pill:hover {
   color: var(--text);
-  border-color: rgba(239, 35, 60, 0.6);
-  background: rgba(239, 35, 60, 0.12);
+  border-color: rgba(59, 110, 255, 0.6);
+  background: rgba(59, 110, 255, 0.12);
   transform: translateY(-1px);
 }
 
@@ -232,9 +232,9 @@
   height: 42px;
   border-radius: 12px;
   color: var(--accent-1);
-  border: 1px solid rgba(255, 107, 122, 0.25);
-  background: linear-gradient(135deg, rgba(255, 107, 122, 0.12), rgba(239, 35, 60, 0.12));
-  box-shadow: 0 0 24px -6px rgba(255, 107, 122, 0.4);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.12), rgba(59, 110, 255, 0.12));
+  box-shadow: 0 0 24px -6px rgba(96, 165, 250, 0.4);
 }
 .icon-badge.small {
   width: 34px;
@@ -376,138 +376,92 @@
 
 .hero-visual {
   display: grid;
+  gap: 22px;
   justify-items: center;
 }
 
-/* Cut-out portrait that sits directly on the page backdrop */
-.portrait {
+.avatar-tilt {
   position: relative;
-  width: min(100%, 400px);
-  aspect-ratio: 760 / 950;
+  width: min(100%, 340px);
+  aspect-ratio: 1;
 }
 
-/* Original photo backdrop (flag), darkened, warmed and dissolved into the page */
-.portrait-bg {
-  position: absolute;
-  inset: 0;
-  isolation: isolate;
-  -webkit-mask-image: radial-gradient(ellipse 55% 50% at 45% 45%, #000 30%, transparent 88%);
-  mask-image: radial-gradient(ellipse 55% 50% at 45% 45%, #000 30%, transparent 88%);
+.avatar-ring {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  border-radius: 36% 64% 58% 42% / 42% 38% 62% 58%;
+  background: conic-gradient(from var(--angle), var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-1));
+  animation: spin-angle 6s linear infinite, morph 14s ease-in-out infinite alternate;
+  box-shadow: 0 0 80px -10px rgba(59, 110, 255, 0.6);
 }
-.portrait-bg img {
+.avatar-ring::before {
+  content: "";
+  position: absolute;
+  inset: -18px;
+  z-index: -1;
+  border-radius: inherit;
+  background: inherit;
+  filter: blur(36px);
+  opacity: 0.55;
+}
+
+.avatar-photo {
   display: block;
   width: 100%;
   height: 100%;
-  filter: brightness(0.5) saturate(0.85) contrast(1.1) blur(0.6px);
-}
-.portrait-bg-tint {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(200deg, rgba(239, 35, 60, 0.55), rgba(120, 10, 30, 0.35) 60%),
-    linear-gradient(0deg, rgba(8, 5, 7, 0.7), transparent 45%);
-  mix-blend-mode: soft-light;
+  object-fit: cover;
+  border-radius: inherit;
+  background: var(--bg-2);
 }
 
-.portrait-glow {
-  position: absolute;
-  inset: 4% -14% 18%;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(239, 35, 60, 0.42), rgba(239, 35, 60, 0.1) 60%, transparent);
-  filter: blur(24px);
-  animation: glow-breathe 7s ease-in-out infinite;
-}
-@keyframes glow-breathe {
-  50% {
-    opacity: 0.7;
-    transform: scale(0.95);
-  }
-}
-
-.portrait-ring {
-  position: absolute;
-  left: 50%;
-  top: 31%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  translate: -50% -50%;
-  pointer-events: none;
-}
-/* Thin ring with a bright arc sweeping around it */
-.ring-1 {
-  width: 88%;
-  padding: 1.5px;
-  background: conic-gradient(
-    from var(--angle),
-    rgba(255, 235, 240, 0.08) 0 45%,
-    var(--accent-3) 62%,
-    var(--accent-2) 72%,
-    rgba(255, 235, 240, 0.08) 85%
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  animation: spin-angle 8s linear infinite;
-}
-.ring-2 {
-  width: 112%;
-  border: 1px dashed rgba(255, 235, 240, 0.1);
-  animation: ring-rotate 60s linear infinite;
-}
-@keyframes ring-rotate {
-  to { rotate: 360deg; }
+@keyframes morph {
+  50% { border-radius: 58% 42% 36% 64% / 56% 62% 38% 44%; }
+  100% { border-radius: 44% 56% 62% 38% / 38% 48% 52% 62%; }
 }
 @keyframes spin-angle {
   to { --angle: 360deg; }
 }
 
-.portrait-figure {
+.orbit-tag {
   position: absolute;
-  inset: 0;
-  isolation: isolate;
-  /* Soft red glow around the silhouette (no hard outline, so fine hair stays natural) */
-  filter: drop-shadow(0 0 26px rgba(239, 35, 60, 0.3));
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(9, 13, 24, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text);
+  font: 500 12px/1 var(--font-mono);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.9);
+  animation: float 6s ease-in-out infinite;
 }
-
-.portrait-img,
-.portrait-light {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  /* Subject cut-out, intersected with a soft vignette so shoulders melt into the page */
-  -webkit-mask-image:
-    var(--portrait-mask),
-    radial-gradient(ellipse 62% 72% at 50% 30%, #000 56%, transparent 100%);
-  -webkit-mask-size: 100% 100%;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-composite: source-in;
-  mask-image:
-    var(--portrait-mask),
-    radial-gradient(ellipse 62% 72% at 50% 30%, #000 56%, transparent 100%);
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-  mask-composite: intersect;
+.orbit-tag::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  vertical-align: 1px;
+  background: var(--accent-1);
+  box-shadow: 0 0 8px var(--accent-1);
 }
+.orbit-0 { top: 6%; left: -10%; }
+.orbit-1 { top: 18%; right: -12%; animation-delay: -1.5s; }
+.orbit-1::before { background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); }
+.orbit-2 { bottom: 16%; left: -14%; animation-delay: -3s; }
+.orbit-2::before { background: var(--accent-3); box-shadow: 0 0 8px var(--accent-3); }
+.orbit-3 { bottom: 4%; right: -6%; animation-delay: -4.5s; }
 
-.portrait-img {
-  filter: saturate(0.82) contrast(1.05) brightness(1.04);
-}
-
-/* Colour grade: warm red key light from the upper right, shadow on the left */
-.portrait-light {
-  background:
-    linear-gradient(235deg, rgba(255, 90, 100, 0.8) 0%, rgba(239, 35, 60, 0.3) 28%, transparent 55%),
-    linear-gradient(90deg, rgba(8, 5, 7, 0.4), transparent 35%);
-  mix-blend-mode: soft-light;
+@keyframes float {
+  50% { transform: translateY(-12px); }
 }
 
 .id-card {
   position: relative;
   z-index: 2;
-  margin-top: -84px;
   width: min(100%, 380px);
   padding: 18px 22px;
   display: grid;
@@ -545,7 +499,7 @@
   stroke-linecap: round;
 }
 .ecg-base {
-  stroke: rgba(255, 107, 122, 0.14);
+  stroke: rgba(96, 165, 250, 0.14);
   stroke-width: 1.5;
 }
 .ecg-pulse {
@@ -608,34 +562,6 @@
   margin-left: auto;
   color: var(--vital);
   text-shadow: 0 0 8px var(--vital);
-}
-
-/* Stats */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 8px;
-  padding: 0;
-}
-.stat {
-  position: relative;
-  padding: 26px 22px;
-  text-align: center;
-}
-.stat + .stat {
-  border-left: 1px solid var(--line);
-}
-.stat-value {
-  font: 700 clamp(44px, 6vw, 64px) / 1 var(--font-display);
-  color: var(--stat-color);
-  text-shadow: 0 0 24px var(--stat-color);
-}
-.stat-label {
-  margin-top: 10px;
-  color: var(--muted);
-  font: 500 12px/1 var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
 }
 
 /* Healthcare × Technology */
@@ -968,7 +894,7 @@
   background: linear-gradient(180deg, var(--accent-1), var(--accent-2), var(--accent-3));
   transform-origin: top;
   transform: scaleY(var(--progress, 0));
-  box-shadow: 0 0 14px rgba(239, 35, 60, 0.7);
+  box-shadow: 0 0 14px rgba(59, 110, 255, 0.7);
 }
 
 .timeline-item {
@@ -983,17 +909,17 @@
   border-radius: 50%;
   border: 2px solid var(--accent-2);
   background: var(--bg);
-  box-shadow: 0 0 0 4px rgba(239, 35, 60, 0.15);
+  box-shadow: 0 0 0 4px rgba(59, 110, 255, 0.15);
   transition: background 300ms, box-shadow 300ms;
 }
 .timeline-item.is-visible .timeline-dot {
   background: var(--accent-2);
-  box-shadow: 0 0 0 4px rgba(239, 35, 60, 0.18), 0 0 16px var(--accent-2);
+  box-shadow: 0 0 0 4px rgba(59, 110, 255, 0.18), 0 0 16px var(--accent-2);
 }
 .timeline-item.is-current .timeline-dot {
   border-color: var(--vital);
   background: var(--vital);
-  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.18), 0 0 16px var(--vital);
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.18), 0 0 16px var(--vital);
 }
 .timeline-item.is-current .timeline-dot::after {
   content: "";
@@ -1035,7 +961,7 @@
 }
 .timeline-meta span:first-child {
   color: var(--accent-1);
-  border-color: rgba(255, 107, 122, 0.3);
+  border-color: rgba(96, 165, 250, 0.3);
 }
 
 .resume-list {
@@ -1097,7 +1023,7 @@
   transition: border-color 250ms, transform 250ms var(--ease);
 }
 .certification-item:hover {
-  border-color: rgba(255, 107, 122, 0.4);
+  border-color: rgba(96, 165, 250, 0.4);
   transform: translateX(4px);
 }
 
@@ -1132,7 +1058,7 @@
   padding: 14px 16px;
   border-radius: 14px;
   border: 1px solid var(--line-strong);
-  background: rgba(9, 5, 7, 0.6);
+  background: rgba(5, 7, 13, 0.6);
   color: var(--text);
   font: 15px/1.5 var(--font);
   transition: border-color 250ms, box-shadow 250ms, background 250ms;
@@ -1149,8 +1075,8 @@
 .field textarea:focus {
   outline: none;
   border-color: var(--accent-2);
-  background: rgba(9, 5, 7, 0.85);
-  box-shadow: 0 0 0 4px rgba(239, 35, 60, 0.18), 0 0 30px -8px rgba(239, 35, 60, 0.6);
+  background: rgba(5, 7, 13, 0.85);
+  box-shadow: 0 0 0 4px rgba(59, 110, 255, 0.18), 0 0 30px -8px rgba(59, 110, 255, 0.6);
 }
 .field:focus-within span {
   color: var(--accent-1);
@@ -1252,8 +1178,8 @@
   .hero-visual {
     order: -1;
   }
-  .portrait {
-    width: min(78vw, 320px);
+  .avatar-tilt {
+    width: min(70vw, 280px);
   }
   .resume-meta-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1272,17 +1198,13 @@
 @media (max-width: 720px) {
   .grid3,
   .health-grid,
-  .stats,
   .currently {
     grid-template-columns: 1fr;
   }
-  .stat + .stat {
-    border-left: none;
-    border-top: 1px solid var(--line);
-  }
-  .stats.card {
-    padding: 0;
-  }
+  .orbit-0 { left: -6%; }
+  .orbit-1 { right: -8%; }
+  .orbit-2 { left: -8%; }
+  .orbit-3 { right: -2%; }
   .hero-ecg {
     margin-inline: -16px;
   }
@@ -1336,6 +1258,6 @@
 /* Healthcare tag on resume timeline */
 .timeline-meta .health-tag {
   color: var(--vital);
-  border-color: rgba(45, 212, 191, 0.35);
-  background: rgba(45, 212, 191, 0.06);
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.06);
 }

@@ -1,10 +1,7 @@
 import "../styles/page.css";
 import { Link } from "react-router-dom";
-import headshot from "../assets/profile-pic/headshot.jpg";
-import headshotMask from "../assets/profile-pic/headshot-mask.png";
-import headshotBackdrop from "../assets/profile-pic/headshot-backdrop.jpg";
+import profilePhoto from "../assets/profile-pic/profile-web.jpg";
 import Typewriter from "../components/Typewriter";
-import CountUp from "../components/CountUp";
 import Tilt from "../components/Tilt";
 import EcgLine from "../components/EcgLine";
 import DnaHelix from "../components/DnaHelix";
@@ -16,7 +13,7 @@ import {
   MailIcon,
   RefreshCodeIcon,
 } from "../components/Icons";
-import { certifications, experiences, links, marqueeSkills, skillGroups } from "../data/profile";
+import { links, marqueeSkills } from "../data/profile";
 
 const ROLES = [
   "Medicare pricing software.",
@@ -26,11 +23,7 @@ const ROLES = [
 ];
 
 
-const STATS = [
-  { value: experiences.length, label: "Internships", color: "var(--vital)" },
-  { value: certifications.length, label: "Certifications", color: "var(--accent-1)" },
-  { value: skillGroups[0].items.length, label: "Languages", color: "var(--accent-3)" },
-];
+const ORBIT_TAGS = ["Java", "Python", "AWS", "Health IT"];
 
 const HEALTH_WORK = [
   {
@@ -103,19 +96,16 @@ export default function Home() {
         </div>
 
         <div className="hero-visual" data-reveal style={{ "--d": 2 }}>
-          <div className="portrait" style={{ "--portrait-mask": `url(${headshotMask})` }}>
-            <div className="portrait-bg" aria-hidden="true">
-              <img src={headshotBackdrop} alt="" />
-              <span className="portrait-bg-tint" />
+          <Tilt className="avatar-tilt" max={10}>
+            <div className="avatar-ring">
+              <img className="avatar-photo" src={profilePhoto} alt="Adithya Vadivel" />
             </div>
-            <span className="portrait-glow" aria-hidden="true" />
-            <span className="portrait-ring ring-1" aria-hidden="true" />
-            <span className="portrait-ring ring-2" aria-hidden="true" />
-            <div className="portrait-figure">
-              <img className="portrait-img" src={headshot} alt="Adithya Vadivel" />
-              <span className="portrait-light" aria-hidden="true" />
-            </div>
-          </div>
+            {ORBIT_TAGS.map((tag, i) => (
+              <span key={tag} className={`orbit-tag orbit-${i}`}>
+                {tag}
+              </span>
+            ))}
+          </Tilt>
 
           <div className="card spot id-card">
             <div className="id-head">
@@ -135,17 +125,6 @@ export default function Home() {
       <div className="hero-ecg" data-reveal>
         <EcgLine beats={8} speed={4} />
       </div>
-
-      <section className="stats card" aria-label="At a glance" data-reveal>
-        {STATS.map((s) => (
-          <div className="stat spot" key={s.label} style={{ "--stat-color": s.color }}>
-            <div className="stat-value">
-              <CountUp to={s.value} />
-            </div>
-            <div className="stat-label">{s.label}</div>
-          </div>
-        ))}
-      </section>
 
       <div className="marquee" aria-label="Skill stack" data-reveal>
         <div className="marquee-track">

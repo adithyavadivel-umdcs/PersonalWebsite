@@ -8,23 +8,23 @@
 :root {
   color-scheme: dark;
 
-  --bg: #080507;
-  --bg-2: #120a0e;
-  --surface: rgba(24, 16, 20, 0.62);
-  --surface-solid: rgba(15, 10, 13, 0.94);
-  --text: #f4eef0;
-  --muted: #b8a9ae;
-  --faint: #7d6d73;
-  --line: rgba(255, 235, 240, 0.08);
-  --line-strong: rgba(255, 235, 240, 0.16);
+  --bg: #05070d;
+  --bg-2: #0a0f1c;
+  --surface: rgba(16, 22, 38, 0.62);
+  --surface-solid: rgba(9, 13, 24, 0.94);
+  --text: #edf2fb;
+  --muted: #a8b4cc;
+  --faint: #69758f;
+  --line: rgba(232, 242, 255, 0.08);
+  --line-strong: rgba(232, 242, 255, 0.16);
 
-  /* Accents: light red (labels/links), crimson (glows), amber (gradient tail) */
-  --accent-1: #ff6b7a;
-  --accent-2: #ef233c;
-  --accent-3: #ff9f5a;
-  /* Clinical teal: vitals, live status, ECG traces */
-  --vital: #2dd4bf;
-  --grad: linear-gradient(110deg, var(--accent-3), var(--accent-1) 40%, var(--accent-2) 75%, #be123c);
+  /* Accents: sky blue (labels/links), royal blue (glows), cyan (gradient start) */
+  --accent-1: #60a5fa;
+  --accent-2: #3b6eff;
+  --accent-3: #22d3ee;
+  /* Mint green: live status and health signals */
+  --vital: #34d399;
+  --grad: linear-gradient(110deg, var(--accent-3), var(--accent-1) 40%, var(--accent-2) 75%, #5b4bdb);
 
   --radius: 20px;
   --radius-sm: 12px;
@@ -62,7 +62,7 @@ body {
 }
 
 ::selection {
-  background: rgba(239, 35, 60, 0.45);
+  background: rgba(59, 110, 255, 0.45);
   color: #fff;
 }
 
@@ -133,7 +133,7 @@ h1, h2, h3, h4 {
   height: 46vw;
   top: -14vw;
   left: -10vw;
-  background: radial-gradient(circle, rgba(239, 35, 60, 0.55), transparent 65%);
+  background: radial-gradient(circle, rgba(59, 110, 255, 0.55), transparent 65%);
   animation: drift-a 22s ease-in-out infinite alternate;
 }
 .aurora-b {
@@ -141,7 +141,7 @@ h1, h2, h3, h4 {
   height: 40vw;
   top: 10vh;
   right: -12vw;
-  background: radial-gradient(circle, rgba(45, 212, 191, 0.16), transparent 65%);
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.16), transparent 65%);
   animation: drift-b 26s ease-in-out infinite alternate;
 }
 .aurora-c {
@@ -149,7 +149,7 @@ h1, h2, h3, h4 {
   height: 36vw;
   bottom: -16vw;
   left: 30vw;
-  background: radial-gradient(circle, rgba(255, 159, 90, 0.18), transparent 65%);
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.18), transparent 65%);
   animation: drift-a 30s ease-in-out infinite alternate-reverse;
 }
 
@@ -180,7 +180,7 @@ h1, h2, h3, h4 {
   inset: 0;
   background: radial-gradient(
     520px circle at var(--cx, -1000px) var(--cy, -1000px),
-    rgba(239, 35, 60, 0.12),
+    rgba(59, 110, 255, 0.12),
     transparent 60%
   );
 }
@@ -211,7 +211,7 @@ h1, h2, h3, h4 {
   background: var(--grad);
   transform-origin: 0 50%;
   transform: scaleX(var(--scroll, 0));
-  box-shadow: 0 0 12px rgba(239, 35, 60, 0.8);
+  box-shadow: 0 0 12px rgba(59, 110, 255, 0.8);
 }
 
 .route-wipe {
@@ -219,7 +219,7 @@ h1, h2, h3, h4 {
   inset: 0;
   z-index: 40;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(239, 35, 60, 0.18) 40%, rgba(255, 107, 122, 0.22) 50%, transparent 60%);
+  background: linear-gradient(90deg, transparent, rgba(59, 110, 255, 0.18) 40%, rgba(96, 165, 250, 0.22) 50%, transparent 60%);
   transform: translateX(-100%);
   animation: wipe 900ms var(--ease) forwards;
 }

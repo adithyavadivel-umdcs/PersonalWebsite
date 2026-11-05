@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
-// Crimson, light red, amber, plus a clinical teal accent.
-const COLORS = ["239,35,60", "255,107,122", "255,159,90", "239,35,60", "45,212,191"];
+// Royal blue, sky blue, cyan, plus a mint-green accent.
+const COLORS = ["59, 110, 255", "96, 165, 250", "34, 211, 238", "59, 110, 255", "52, 211, 153"];
 const CROSS_CHANCE = 0.14;
 const LINK_DIST = 130;
 const MOUSE_RADIUS = 180;
@@ -75,7 +75,7 @@ export default function ParticleField() {
           const b = particles[j];
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < LINK_DIST) {
-            ctx.strokeStyle = `rgba(255,120,135,${(1 - d / LINK_DIST) * 0.14})`;
+            ctx.strokeStyle = `rgba(130,180,255,${(1 - d / LINK_DIST) * 0.14})`;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -85,7 +85,7 @@ export default function ParticleField() {
 
         const md = Math.hypot(a.x - mouse.x, a.y - mouse.y);
         if (md < MOUSE_RADIUS * 1.25) {
-          ctx.strokeStyle = `rgba(255,107,122,${(1 - md / (MOUSE_RADIUS * 1.25)) * 0.4})`;
+          ctx.strokeStyle = `rgba(96, 165, 250,${(1 - md / (MOUSE_RADIUS * 1.25)) * 0.4})`;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(mouse.x, mouse.y);

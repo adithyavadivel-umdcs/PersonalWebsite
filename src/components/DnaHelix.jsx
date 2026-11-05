@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { prefersReducedMotion } from "../lib/effects";
 
-const STRAND_A = "239,35,60"; // crimson
-const STRAND_B = "45,212,191"; // clinical teal
+const STRAND_A = "59, 110, 255"; // royal blue
+const STRAND_B = "52, 211, 153"; // mint green
 
 /** Rotating DNA double helix drawn on a canvas that fills its parent. */
 export default function DnaHelix({ pairs = 24, className = "" }) {
