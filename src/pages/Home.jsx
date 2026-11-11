@@ -4,53 +4,17 @@ import profilePhoto from "../assets/profile-pic/profile-web.jpg";
 import Typewriter from "../components/Typewriter";
 import Tilt from "../components/Tilt";
 import EcgLine from "../components/EcgLine";
-import DnaHelix from "../components/DnaHelix";
-import {
-  ArrowIcon,
-  ChartIcon,
-  FlaskIcon,
-  HeartPulseIcon,
-  MailIcon,
-  RefreshCodeIcon,
-} from "../components/Icons";
+import { ArrowIcon, MailIcon } from "../components/Icons";
 import { links, marqueeSkills } from "../data/profile";
 
 const ROLES = [
-  "Medicare pricing software.",
-  "healthcare data pipelines.",
-  "cloud tooling on AWS.",
-  "clean, polished interfaces.",
+  "software in Java and Python.",
+  "small tools on AWS.",
+  "clean, simple web pages.",
 ];
 
 
-const ORBIT_TAGS = ["Java", "Python", "AWS", "Health IT"];
-
-const HEALTH_WORK = [
-  {
-    icon: HeartPulseIcon,
-    title: "Medicare Pricing Systems",
-    org: "CMS · Software Developer Intern",
-    body: "Maintaining the Java “Pricer” applications that price Medicare claims, and the pipelines that turn policy files into fee schedules.",
-  },
-  {
-    icon: ChartIcon,
-    title: "Claims & Case Analytics",
-    org: "CMS · Data Analyst Intern",
-    body: "Analyzing claims and case-routing data from internal CMS systems and turning raw extracts into dashboards and automated reporting.",
-  },
-  {
-    icon: RefreshCodeIcon,
-    title: "Legacy Modernization",
-    org: "CMS · HHS CIO directive",
-    body: "Converting internal SAS analytics programs to Python to modernize legacy healthcare analytics code.",
-  },
-  {
-    icon: FlaskIcon,
-    title: "Drug Discovery Research",
-    org: "Northeastern University · Research Intern",
-    body: "Reviewing scientific literature on drug discovery and public health outcomes at the Center for Drug Discovery.",
-  },
-];
+const ORBIT_TAGS = ["Java", "Python", "AWS", "SQL"];
 
 const CURRENTLY = [
   { label: "Working", value: "Software Developer Intern at CMS" },
@@ -110,7 +74,7 @@ export default function Home() {
           <div className="card spot id-card">
             <div className="id-head">
               <span className="id-cross" aria-hidden="true" />
-              <span>ID // Health IT</span>
+              <span>About me</span>
               <span className="id-status">● Active</span>
             </div>
             <div className="id-row"><span>Role</span><strong>Software Dev Intern, CMS</strong></div>
@@ -139,36 +103,6 @@ export default function Home() {
       <section className="section">
         <div className="section-title" data-reveal>
           <span className="section-index">01</span>
-          <h2>
-            Healthcare <span className="gradient">×</span> Technology
-          </h2>
-        </div>
-
-        <div className="health-layout">
-          <div className="health-intro card spot" data-reveal>
-            <DnaHelix />
-            <p className="lead">
-              Much of my recent work sits where software meets healthcare: Medicare payment
-              systems, claims analytics, and drug-discovery research.
-            </p>
-          </div>
-
-          <div className="health-grid">
-            {HEALTH_WORK.map(({ icon, title, org, body }, i) => (
-              <Tilt className="card spot health-card" key={title} max={5} data-reveal style={{ "--d": i }}>
-                <span className="icon-badge">{icon()}</span>
-                <p className="health-org">{org}</p>
-                <h3>{title}</h3>
-                <p>{body}</p>
-              </Tilt>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-title" data-reveal>
-          <span className="section-index">02</span>
           <h2>About</h2>
         </div>
 

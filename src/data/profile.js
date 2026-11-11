@@ -117,25 +117,60 @@ export const resumeProjects = [
   },
 ];
 
-// Long-form project entries used on the Projects page.
+// Featured projects shown at the top of the Projects page.
 export const projects = [
   {
     title: "AWS SATv2 Findings Assistant",
     year: "2026",
     kind: "Security tooling · CLI",
+    repo: "-satv2-privacy-assistant",
     description:
-      "Developed a privacy-first Python application that processes AWS SATv2/Prowler assessment exports, automatically redacting sensitive cloud infrastructure data and generating AI-ready remediation summaries without exposing confidential cloud resources. Built an automated findings analysis pipeline that streams large CSV files, normalizes multiple SATv2/Prowler export formats, and classifies and prioritizes security findings into HTML and Markdown reports to accelerate remediation workflows. Implemented automated privacy validation and comprehensive unit tests to ensure sensitive infrastructure data is never included in AI-ready outputs, while maintaining reliable parsing, classification, and reporting across assessment formats.",
-    tags: ["Python", "Pandas", "Pytest", "HTML", "Git"],
+      "A Python command-line tool that reads AWS SATv2/Prowler security assessment exports, redacts sensitive infrastructure details, and produces HTML and Markdown summaries of the findings sorted by severity. It streams large CSV files and has Pytest tests that check no sensitive data ends up in the output.",
+    tags: ["Python", "Pandas", "Pytest", "HTML"],
   },
   {
     title: "Personal Portfolio",
     year: "2026",
     kind: "Web · Cloud",
+    repo: "PersonalWebsite",
     description:
-      "Built a single-page portfolio with React and Vite to present my background, projects, and resume in a clean, responsive interface. Structured the site for straightforward updates and deployed it with AWS S3, CloudFront, Route 53, and HTTPS.",
-    tags: ["React", "Vite", "AWS", "Responsive UI"],
+      "This website. A React and Vite single-page site with my background, projects, and resume, hosted on AWS S3 and CloudFront with Route 53 and HTTPS.",
+    tags: ["React", "Vite", "AWS"],
+  },
+  {
+    title: "ChoirMap AI",
+    year: "2026",
+    kind: "Web app",
+    repo: "choir-map-ai",
+    description:
+      "A React app for managing a choir: add and edit singers, take attendance and export it as a PDF, and generate a seating chart arranged by height.",
+    tags: ["React", "Vite", "JavaScript"],
   },
 ];
+
+// How repos are organized in the GitHub browser on the Projects page.
+// Repos not listed in a group fall into the default group.
+export const repoGroups = [
+  {
+    name: "Python Data Structures Labs",
+    note: "Coursework",
+    repos: [
+      "Python-Basic-Principles",
+      "ArraysLab2",
+      "Lab3ArraysLinked",
+      "Lab4Strings",
+      "Lab5SortedLists",
+      "Lab6LinkedLists",
+      "Lab7Recursion",
+      "Lab8",
+      "DieGameFinalProject",
+    ],
+  },
+];
+export const defaultRepoGroup = "Personal Projects";
+
+// Repos never shown on the site.
+export const hiddenRepos = ["CMSC131Review", "Bitcamp26"];
 
 export const certifications = [
   "AWS Certified Cloud Practitioner",

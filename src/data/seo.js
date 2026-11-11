@@ -16,7 +16,7 @@ export const pageMeta = {
   "/projects": {
     title: "Projects | Adithya Vadivel",
     description:
-      "Projects by Adithya Vadivel, including the AWS SATv2 Findings Assistant for privacy-first security reporting and a React portfolio deployed on AWS.",
+      "Projects by Adithya Vadivel, including the AWS SATv2 Findings Assistant, ChoirMap AI, and this React portfolio, plus a browsable list of GitHub repositories.",
   },
   "/contact": {
     title: "Contact | Adithya Vadivel",
